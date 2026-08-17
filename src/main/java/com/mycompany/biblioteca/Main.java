@@ -64,4 +64,25 @@ public class Main {
             System.out.println(c);
         }
     }
+    
+    static void actualizarCliente() {
+        System.out.print("ID del cliente a actualizar: ");
+        int id = Integer.parseInt(sc.nextLine());
+
+        Cliente c = buscarClientePorId(id);
+        if (c == null) {
+            System.out.println("Cliente no encontrado.");
+            return;
+        }
+
+        System.out.print("Nuevo nombre: ");
+        String nuevoNombre = sc.nextLine();
+
+        System.out.print("Nuevo telefono: ");
+        String nuevoTelefono = sc.nextLine();
+
+        c.setNombre(nuevoNombre);
+        c.setTelefono(nuevoTelefono);
+        System.out.println("Cliente actualizado correctamente.");
+    }
 }

@@ -85,4 +85,18 @@ public class Main {
         c.setTelefono(nuevoTelefono);
         System.out.println("Cliente actualizado correctamente.");
     }
+    
+    static void eliminarCliente() {
+        System.out.print("ID del cliente a eliminar: ");
+        int id = Integer.parseInt(sc.nextLine());
+
+        Cliente c = buscarClientePorId(id);
+        if (c == null) {
+            System.out.println("Cliente no encontrado.");
+            return;
+        }
+
+        clientes.remove(c);
+        System.out.println("Cliente eliminado correctamente.");
+    }
 }

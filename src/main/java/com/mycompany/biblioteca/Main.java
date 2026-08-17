@@ -32,4 +32,36 @@ public class Main {
         clientes.add(new Cliente(id, nombre, telefono));
         System.out.println("Cliente creado correctamente.");
     }
+    
+    static void listarClientes() {
+        System.out.println("--- CLIENTES ---");
+        if (clientes.isEmpty()) {
+            System.out.println("No hay clientes registrados.");
+            return;
+        }
+        for (Cliente c : clientes) {
+            System.out.println(c);
+        }
+    }
+
+    static Cliente buscarClientePorId(int id) {
+        for (Cliente c : clientes) {
+            if (c.getId() == id) {
+                return c;
+            }
+        }
+        return null;
+    }
+
+    static void buscarCliente() {
+        System.out.print("ID a buscar: ");
+        int id = Integer.parseInt(sc.nextLine());
+
+        Cliente c = buscarClientePorId(id);
+        if (c == null) {
+            System.out.println("Cliente no encontrado.");
+        } else {
+            System.out.println(c);
+        }
+    }
 }

@@ -116,4 +116,35 @@ public class Main {
         libros.add(new Libro(codigo, titulo, anio, autor));
         System.out.println("Libro creado correctamente.");
     }
+    static void listarLibros() {
+        System.out.println("--- LIBROS ---");
+        if (libros.isEmpty()) {
+            System.out.println("No hay libros registrados.");
+            return;
+        }
+        for (Libro l : libros) {
+            System.out.println(l);
+        }
+    }
+
+    static Libro buscarLibroPorCodigo(String codigo) {
+        for (Libro l : libros) {
+            if (l.getCodigo().equals(codigo)) {
+                return l;
+            }
+        }
+        return null;
+    }
+
+    static void buscarLibro() {
+        System.out.print("Codigo a buscar: ");
+        String codigo = sc.nextLine();
+
+        Libro l = buscarLibroPorCodigo(codigo);
+        if (l == null) {
+            System.out.println("Libro no encontrado.");
+        } else {
+            System.out.println(l);
+        }
+    }
 }

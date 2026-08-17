@@ -18,8 +18,77 @@ public class Main {
             static ArrayList<Prestamo> prestamos = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        // Aqui pondre el menu (Fase 8)
+       public static void main(String[] args) {
+        int opcion;
+
+        do {
+            System.out.println();
+            System.out.println("===== SISTEMA DE BIBLIOTECA =====");
+            System.out.println("1. Crear cliente");
+            System.out.println("2. Listar clientes");
+            System.out.println("3. Buscar cliente");
+            System.out.println("4. Actualizar cliente");
+            System.out.println("5. Eliminar cliente");
+            System.out.println("6. Crear libro");
+            System.out.println("7. Listar libros");
+            System.out.println("8. Buscar libro");
+            System.out.println("9. Actualizar libro");
+            System.out.println("10. Eliminar libro");
+            System.out.println("11. Registrar prestamo");
+            System.out.println("12. Registrar devolucion");
+            System.out.println("13. Listar prestamos");
+            System.out.println("0. Salir");
+            System.out.print("Seleccione una opcion: ");
+
+            opcion = Integer.parseInt(sc.nextLine());
+
+            switch (opcion) {
+                case 1:
+                    crearCliente();
+                    break;
+                case 2:
+                    listarClientes();
+                    break;
+                case 3:
+                    buscarCliente();
+                    break;
+                case 4:
+                    actualizarCliente();
+                    break;
+                case 5:
+                    eliminarCliente();
+                    break;
+                case 6:
+                    crearLibro();
+                    break;
+                case 7:
+                    listarLibros();
+                    break;
+                case 8:
+                    buscarLibro();
+                    break;
+                case 9:
+                    actualizarLibro();
+                    break;
+                case 10:
+                    eliminarLibro();
+                    break;
+                case 11:
+                    crearPrestamo();
+                    break;
+                case 12:
+                    devolverPrestamo();
+                    break;
+                case 13:
+                    listarPrestamos();
+                    break;
+                case 0:
+                    System.out.println("Programa finalizado.");
+                    break;
+                default:
+                    System.out.println("Opcion no valida.");
+            }
+        } while (opcion != 0);
     }
 
     static void crearCliente() {
